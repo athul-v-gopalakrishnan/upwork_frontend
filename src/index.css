@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-upwork-green: #14a800;
+  --color-upwork-dark-green: #108a00;
+  --color-upwork-bg: #f2f7f2;
+  --color-upwork-border: #d5e0d5;
+  --color-upwork-text: #001e00;
+  --color-upwork-muted: #5e6d55;
+  --color-upwork-light-green: #e4ebe4;
+  --color-upwork-blue: #1f57c3;
+  --font-sans: "Inter", "Neue Montreal", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-upwork-text);
+  background-color: var(--color-upwork-bg);
+  margin: 0;
+}
