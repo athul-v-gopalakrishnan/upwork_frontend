@@ -18,6 +18,7 @@ export default function ProposalPage() {
   const [isReverting, setIsReverting] = useState(false);
   const [selectedProfile, setSelectedProfile] = useState<'general_profile' | 'machine_learning'>('general_profile');
   const [isApplied, setIsApplied] = useState(false);
+  const [appliedBy, setAppliedBy] = useState<string | null>(null);
 
   useEffect(() => {
     if (!jobId) return;
@@ -41,6 +42,7 @@ export default function ProposalPage() {
           setQas(result.proposal.questions_and_answers || []);
           setSelectedProfile(result.profile || 'general_profile');
           setIsApplied(result.applied || false);
+          setAppliedBy(result.approved_by || null);
         } else {
           alert('Proposal not found for this job.');
           navigate(`/jobs/${jobId}`);
@@ -281,6 +283,11 @@ export default function ProposalPage() {
                   </>
                 )}
               </button>
+              {isApplied && appliedBy && (
+                <p className="text-xs text-upwork-muted text-center">
+                  Applied by {appliedBy}
+                </p>
+              )}
               <button
                 onClick={handleSave}
                 disabled={isSaving}

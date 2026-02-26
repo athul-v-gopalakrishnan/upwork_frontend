@@ -26,6 +26,7 @@ export interface GetProposalResponse {
   profile?: 'general_profile' | 'machine_learning';
   proposal: ProposalData;
   applied: boolean;
+  approved_by?: string | null;
 }
 
 export interface SaveProposalRequest {
